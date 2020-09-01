@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var id = "aaa";
+        var pw = "bbb";
+
+        var user_id = prompt("아이디를 입력","");
+        var user_pw = prompt("비밀번호를 입력","");
+
+        if(id === user_id){
+            // id가 맞으면 pw체크
+            if(pw === user_pw){
+                document.write(user_id+" 님 환영합니다");
+            }else{
+                document.write("비밀번호 불일치");
+                location.reload();
+            }
+        }else{
+            alert("아이디 불일치");
+            location.reload();
+        }
+    </script>
+</body>
+</html>
