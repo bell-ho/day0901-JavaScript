@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var price1 = 3000;
+        var price2 = 6000;
+        var price3 = 3000;
+
+        var pricePlus = price1 + price2 + price3;
+
+        var priceMax = 10000;
+
+        var result = pricePlus >= priceMax;
+
+        result = result ? "과소비" : "적정지출";
+
+        document.write("너는" + result);
+    </script>
+    <br>
+    <script>
+        var p1 = 1200;
+        var p2 = 1300;
+        var p3 = 1000;
+
+        var p123 = (p1 + p2 + p3) / 3;
+
+        var p4 = prompt("얼마나 4분기 팔았나요");
+
+        var result = p4 >= p123;
+
+        result = result ? "굿" : "저조합니다";
+
+        document.write("당신은" + result);
+    </script>
+</body>
+
+</html>
