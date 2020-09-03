@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var count = 0 ;
+
+        myFnc(); //호출문
+
+        function myFnc(){ //일반함수 정의방식 (호이스팅)
+            count++;
+            document.write("hello"+count,"<br>");
+            document.write("hello","하이 그냥 써본거","<br>");
+        }
+
+        myFnc(); //여기서 한번더 실행
+
+        var theFnc = function(){ //익명 함수선언 참조방식은 호출문이 함수보다 앞에있으면 안됨
+            count++;
+            document.write("바이"+count,"<br>");
+        }
+
+        theFnc();
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num = 1;
+
+        function gallery(direct){
+            if(direct){
+                if(num == 8)
+                return;
+                num++;
+            }else{
+                if(num == 1)return;
+                num--;
+            }
+
+            var img = document.getElementById("pp");
+            img.setAttribute("src","",+num+".jpg");
+        }
+    </script>
+</head>
+<body>
+    <p><img src="" id="pp" alt=""></p>
+    <button onclick="gallery(0)">이전</button>
+    <button onclick="gallery(1)">다음</button>
+</body>
+</html>
