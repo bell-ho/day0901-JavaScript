@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function () {
+        var arr1 = [
+          {
+            area: "서울",
+            name: "무대리",
+          },
+          {
+            area: "부산",
+            name: "유대리",
+          },
+          {
+            area: "서울",
+            name: "박대리",
+          },
+        ];
+
+        var arr2 = $.map(arr1, function (a, b) {
+          if (a.area == "서울") {
+            return a;
+          }
+        });
+        console.log(arr2);
+        console.log("===1 end ===");
+
+        var arr3 = $.grep(arr1, function (a, b) {
+          if (a.area == "서울") {
+            return true;
+          } else {
+            return false;
+          }
+        });
+        console.log(arr3);
+        console.log("===2 end ===");
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
