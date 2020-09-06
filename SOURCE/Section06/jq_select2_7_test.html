@@ -13,18 +13,18 @@
                 { "area" : "지산" }
             ];
 
-            $(obj).each(function(i,o){ //배열에 저장된 객체의 개수만큼 메서드가 반복 실행되고 매개변수 i , o 는 배열의 인덱스값과 객체가 대입됨
-                console.log(i + ":" ,o);
+            $(obj).each(function(i,result){ //배열에 저장된 객체의 개수만큼 메서드가 반복 실행되고 매개변수 i , o 는 배열의 인덱스값과 객체가 대입됨
+                console.log(i + ":" , result);
             });
             console.log("=====the end1=====");
 
-            $.each($("#menu2 li"),function(i,o){
-                console.log(i + ":" ,o);
+            $.each($("#menu1 li"),function(i,result){
+                console.log(i + ":" ,result);
             });
             console.log("=====the end2=====");
 
             $.each($("#menu2 li"),function(i){ //선택한 요소만큼 메서드를 반복 실행함 배열에 저장된 요소는 인덱스 오름차순으로 $(this)에 반환됨
-                console.log(i + ":",$(this));
+                console.log(i + ":", $(this) );
             });
         });
     </script>

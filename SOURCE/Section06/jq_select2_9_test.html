@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            var arr1 = ["서울","대전","대구","부산","울산"]; //대괄호는 list형태라서 배열이 맞음
+            var arr2 = ["한국","미국","일본","중국","북한"];
+            var obj = {  "name" : "정과장", "area" : "서울"  }; //중괄호는 dictionary를 만들 때 {'key': 'value'} 같은것 식별용으로.. (객체임)
+
+            var idxNum = $.inArray("부산",arr1); //찾을 데이터 , 데이터가 있는 배열을 쓰면 안덱스 값을 반환함
+            console.log(idxNum);
+
+            var okArray1 = $.isArray(arr1); //배열이 맞으면 true 아니면 false
+            var okArray2 = $.isArray(obj);
+            console.log(okArray1);
+            console.log(okArray2);
+
+            $.merge(arr2,arr1); //두객체를 하나의 배열로 묶음
+            console.log(arr2);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
