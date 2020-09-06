@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $("#p1").addClass("aqua"); //요소를 선택하여 지정한 class값을 생성
+            $("#p2").removeClass("red"); //요소를 선택하여 지정한 class 삭제
+            $("#p3").toggleClass("green"); //요소를 선택하여 class값이 있으면 삭제하고 없으면 생성
+            $("#p4").toggleClass("green");
+            $("#p6").text($("#p5").hasClass("yellow")); //선택한 요소에 지정한 class값이 있으면 true 없으면 false
+        });
+    </script>
+    <style>
+        .aqua{background-color: #00ffff;}
+        .red{background-color: #ff0000;}
+        .green{background-color: #00ff00;}
+        .yellow{background-color: #ffff00;}
+    </style>
+</head>
+<body>
+    <p id="p1">내용1</p>
+    <p id="p2" class="red">내용2</p>
+    <p id="p3">내용3</p>
+    <p id="p4" class="green">내용4</p>
+    <p id="p5" class="yellow">내용5</p>
+    <p id="p6"></p></p>
+</body>
+</html>
