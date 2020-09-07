@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script>
-        $(function(){
-            $(".btn1").on({
-                "mouseover":function(){
-                    $(".txt1").css({"background-color":"yellow"}); //mouseover / mouseout 버튼에 마우스 를 올리면 class값이 txt1인 요소의 배경색을 노란색으로 변경
-                },
-                "mouseout":function(){
-                    $(".txt1").css({"background":"none"}); //버튼에서 벗어나면 배경의 색을 다시제거
-                }
-            });
-
-            $(".btn2").hover(function(){
-                $(".txt2").css({"background-color":"aqua"});
-            },function(){
-                $(".txt2").css({"background":"none"});
-            });
+      $(function () {
+        $(".btn1").on({
+          mouseover: function () {
+            $(".txt1").css({ "background-color": "yellow" }); //mouseover / mouseout 버튼에 마우스 를 올리면 class값이 txt1인 요소의 배경색을 노란색으로 변경
+          },
+          mouseout: function () {
+            $(".txt1").css({ background: "none" }); //버튼에서 벗어나면 배경의 색을 다시제거
+          },
         });
+
+        $(".btn2").hover(
+          function () {
+            $(".txt2").css({ "background-color": "aqua" });
+          },
+          function () {
+            $(".txt2").css({ background: "none" });
+          }
+        );
+      });
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <p>
-        <button class="btn1">mouseover/mouseout</button>
+      <button class="btn1">mouseover/mouseout</button>
     </p>
     <p class="txt1">내용1</p>
 
     <p>
-        <button class="btn2">hover</button>
+      <button class="btn2">hover</button>
     </p>
     <p class="txt2">내용2</p>
-</body>
+  </body>
 </html>
