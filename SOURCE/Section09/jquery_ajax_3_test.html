@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script>
+		$(function () {
+			$.ajax({
+				url: "../js/dataset.xml",
+				dataType: "xml",
+				success: function (data) {
+
+					//dataset.xml에서 find()메서드를 사용해 얻어낸 <record> 객체를 참조함
+					var $data = $(data).find("record");
+
+					if ($data.length > 0) {
+						var tb = $("<table />");
+
+						//$data 객체를 쪼개줘야함
+						$.each($data, function (i, o) {
+							var $id = $(o).find("id").text();
+							var $last_name = $(o).find("last_name").text();
+							var $email = $(o).find("email").text();
+							var $gender = $(o).find("gender").text();
+
+							var row = $("<tr />").append(
+								$("<td />").text($id),
+								$("<td />").text($last_name),
+								$("<td />").text($email),
+								$("<td />").text($gender)
+							);
+							tb.append(row);
+						});
+						$(".wrap").append(tb);
+					}
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class="wrap"></div>
+</body>
+
+</html>
