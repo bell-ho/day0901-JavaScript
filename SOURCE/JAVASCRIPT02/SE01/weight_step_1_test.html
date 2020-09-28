@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //적정체중 = (본인 신장 - 100)x0.9
+
+      let w = prompt("몸무게가 어떻게 되나요");
+      let h = prompt("신장이 어떻게 되나요");
+
+      let goodw = (h - 100) * 0.9;
+
+      if (goodw - 5 < w && goodw + 5 > w) {
+        document.write("적정체중");
+      } else {
+        document.write("적정체중 아님 당신의 적정체중은" + goodw + "입니다");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
