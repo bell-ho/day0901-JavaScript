@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var hometown = [
+        { name: "남준", place: "일산" },
+        { name: "영호", place: "수원" },
+        { name: "호성", place: "문산" },
+      ];
+
+      for (var i = 0; i < hometown.length; i++) {
+        var h = hometown[i];
+        // 변수 h 또는 h에 할당된 객체의 값들을 확인하는 조건문
+        if (!h || !h.place) {
+          continue;
+        }
+        console.log(i+'번째 실행중');
+
+        if(h.name === '호성'){
+            console.log(h.name+' 의 고향은'+h.place);
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
