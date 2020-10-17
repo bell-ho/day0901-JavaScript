@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체이해하기 02</title>
+    <script>
+      var fam = {
+        address: "seoul",
+        member: {},
+        addFam: function (age, name, role) {
+          this.member[role] = {
+            age: age,
+            name: name,
+          };
+        },
+
+        getHeadCount: function () {
+          return Object.keys(this.member).length;
+        },
+      };
+
+      fam.addFam(30, "a", "aunt"); 
+      fam.addFam(3, "lyn", "niece");
+      fam.addFam(20, "c", "a1nt");
+
+
+      var printMember = function(){
+          var members = fam.member;
+          for(role in members){
+              document.write('role =>  ' +role+ ',name=> '+members[role].name+',age=> '+members[role].age,"<br>");
+          };
+      };
+
+      printMember();
+      var members = fam.member;
+      members['newdd']={age : 3 , name:'dd'};
+      members.niece = {age :5,name:'lyn'};
+      delete members.aunt;
+      delete members['a1nt'];
+      printMember();
+    </script>
+  </head>
+  <body></body>
+</html>

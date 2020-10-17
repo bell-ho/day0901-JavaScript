@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>단축 속성명</title>
+  </head>
+  <script>
+    var add = "서울";
+    var members = {};
+    var addFam = function (age, name, role) {
+      this.members[role] = { age, name };
+    };
+
+    var getCount = function () {
+      return Object.keys(this.members).length;
+    };
+
+    var fam = { add, members, addFam, getCount };
+
+    fam.addFam(300, "a", "dog");
+    fam.addFam(300, "b", "cat");
+    fam.addFam(300, "c", "tiger");
+
+    document.write(fam.getCount());
+  </script>
+  <body></body>
+</html>

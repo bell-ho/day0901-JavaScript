@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체 이해하기</title>
+    <script>
+      var fam = {
+        address: "seoul",
+        member: {},
+        addFam: function (age, name, role) {
+          this.member[role] = { //role은 중복안됨
+            age: age,
+            name: name,
+          };
+        },
+
+        getHeadCount: function () {
+          return Object.keys(this.member).length;
+        },
+      };
+
+      fam.addFam(30, "a", "aunt"); 
+      fam.addFam(3, "b", "aut");
+      fam.addFam(20, "c", "a1nt");
+
+      document.write(fam.getHeadCount());
+      console.log(fam);
+    </script>
+  </head>
+  <body></body>
+</html>
