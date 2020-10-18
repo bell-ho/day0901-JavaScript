@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 기본 매개변수 처리하기</title>
+    <script>
+      function drawChart(w = 200, h = 400) {
+        console.log(`${w} x ${h} 차트를 구한다`);
+      }
+      drawChart(100);
+      drawChart(); //전달 인자값이 없어서 기본값이 할당
+
+      function drawChart2(w = 200, h = w / 2) {
+        console.log(`${w} x ${h} 차트를 그림`);
+      }
+      drawChart2(300);
+      drawChart2();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 나머지 매개변수 이해하기</title>
+    <script>
+      /* function(parameter,...restParameter){
+          //arguments 객체는 나머지 매개변수와 다르게 함수 몸통에서만 사용한다
+      } */
+
+      /*  sum함수를 나머지 매개변수로 정의하고 있다 나머지 매개변수인 args는 배열이기 때문에 인덱스를 통해 접근이 가능하고
+      indexOf와 같은 메소드를 사용할 수 있다 1,2,3 전달 인자들은 args의 배열이 되고 배열을 순차적으로 접근하여 total변수값과
+      더하면서 그 결과를 바로 대입한다. 마지막으로 전체 합계인 total을 반환한다 */
+      function sum(...args) {
+        var total = 0;
+        for (var i = 0; i < args.length; i++) {
+          total += args[i];
+        }
+        console.log(args.indexOf(1));
+        return total;
+      }
+      console.log(sum(1, 2, 3));
+
+      //sum2함수는 앞에와 다르게 a,b매개변수를 가지고 있다 그리고 두 매개변수 외에 others라는 나머지 매개변수를 정의하고 있다
+      function sum2(a, b, ...others) {
+        var total = a + b;
+        for (var i = 0; i < others.length; i++) {
+          total += others[i];
+        }
+        return total;
+      }
+      console.log(sum2(1, 2));
+      console.log(sum2(1, 2, 3, 4));
+    </script>
+  </head>
+  <body></body>
+</html>

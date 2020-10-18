@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 이해하기</title>
+    <script>
+      //함수 표현식으로 함수를 만듦
+      var greeting_expression = function (name, age) {
+        console.log(`hi ${name} 나이는 ${age}`);
+        var a = age;
+        var b = `${age}`;
+        // document.write(a, "<br>");
+        // document.write(b);
+      };
+
+      //함수 선언문은 일반적인 개발 언어와 비슷한 함수 선언방식
+      function greeting_declaration(name) {
+        console.log(`hi ${name}`);
+      }
+      var abc = [
+        //배열
+        { name: "이종호", age: 30 }, //객체
+        { name: "이후우", age: 33 },
+      ];
+
+      //인자값으로 백틱을 사용하여 간편하게 씀
+      greeting_expression(`${abc[0].name}`, `29`); //배열지정후 객체를 뽑아서 인자값에 넣어줌
+      greeting_declaration(`${abc[1].name}`);
+    </script>
+  </head>
+  <body></body>
+</html>
