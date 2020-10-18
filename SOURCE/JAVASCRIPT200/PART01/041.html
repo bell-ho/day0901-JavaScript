@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>let으로 변수 선언하기</title>
+    <script>
+      if (true) {
+        var functionScopeValue = "global";
+        let blockScopeValue = "local";
+      }
+      //   var키워드로 정의된 functionScopeValue 변수는 함수 단위의 유효범위를 가지게 되어 if문의 블록에서 정의하여도 블록 밖에서도 접근이 가능하다
+      console.log(functionScopeValue); //global
+
+      //let 키워드로 정의한 blockScopeValue 변수는 블록 단위의 유효 범위를 가지게 되어 if문의 블록 밖에서 접근할 경우 ReferenceError가 발생한다
+      console.log(blockScopeValue); //ReferenceError
+    </script>
+  </head>
+  <body></body>
+</html>

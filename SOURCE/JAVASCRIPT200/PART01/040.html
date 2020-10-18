@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 호이스팅 이해하기</title>
+    <script>
+      /*  자바스크립트에서는 함수를 선언하기 전에 호출이 가능하다 이러한 현상을 호이스팅이하고 한다
+        호이스팅을 직역하면 끌어올리기인데 함수가 실제 호출하기 이전으로 끌어 올라간것처럼 동작하기 때문이다 */
+      hello();
+      function hello() {
+        console.log("하이");
+      }
+ 
+     /* 함수 선언문이 아닌 표현식을 통해 변수로 할당하여 호출하면
+      TypeError가 발생한다 왜그런가하면 실제 hello2의 이름으로 선언된 변수는 호이스팅이 이루어졌고 여기에는 undefined이 할당된다
+      그래서 undefined는 호출할수 없기 때문에 TypeError가 발생한것이다
+      만약 호이스팅이 이루어지지 않았다면 ReferenceError로 hello2가 선언되지 않았다는 에러가 나와야한다 */
+      hello2();
+      var hello2 = function () {
+        console.log("하이하이");
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let value = "바깥값";
+      if (true) {
+        console.log(value); //에러남
+        let value = "안쪽값";
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

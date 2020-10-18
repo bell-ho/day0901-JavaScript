@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스코프 이해하기</title>
+    <script>
+      var a = 10;
+      console.log(a);
+
+      function print() {
+        var b = 20;
+        /*  if문 안에서 변수 c를 선언하고 블록 밖에서 c를 출력
+            변수 c는 if문 안의 블록에서 선언되었지만 var 키워드로 선언한 변수들은 모두 함수 스코프에 정의됨
+            그래서 print()함수 내 어디에서든 변수 c에 접근할 수 있다 */
+        if (true) {
+          var c = 30;
+        }
+        console.log(c);
+      }
+
+      print();
+        /* print 함수에서 선언한 변수 b에 접근하려 한다
+        함수 스코프에 정의 된 변수 b는 해당 함수 내에서만 접근이 가능하기 때문에 함수 밖에서는 접근할 수 없고 전역에도 b라는 이름으로
+        정의된 것이 없기 때문에 리퍼런스 에서가 출력됨 */
+      console.log(b);
+    </script>
+  </head>
+  <body></body>
+</html>
