@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>자바스크립트 객체지향 프로그래밍</title>
+  <script>
+    const teacherJay = {
+      name: "제이",
+      age: 30,
+      teachJavaScript: function (st) {
+        st.gainExp();
+      }
+    }
+
+    const stb = {
+      name: "a",
+      age: 30,
+      exp: 0,
+      gainExp: function () {
+        this.exp++;
+      }
+    }
+    console.log(stb.exp);
+    teacherJay.teachJavaScript(stb);
+    console.log(stb.exp);
+  </script>
+</head>
+
+<body></body>
+
+</html>
