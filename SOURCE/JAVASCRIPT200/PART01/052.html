@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 상속 이해하기</title>
+    <script>
+        class Chart {
+            constructor(w, h) {
+                this.w = w;
+                this.h = h;
+            }
+
+            drawLine() {
+                console.log(`draw line`);
+            }
+        }
+
+        class Barchart extends Chart {
+            constructor(w, h) {
+                super(w, h);
+            }
+            draw() {
+                this.drawLine();
+                console.log(`draw ${this.w} X ${this.h} barChart`);
+            }
+        }
+
+        const barChart1 = new Barchart(100, 100);
+        barChart1.draw();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
