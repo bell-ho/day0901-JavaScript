@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this 이해하기</title>
+    <script>
+      this.valueA = "a";    //브라우저 환경에서 this를 전역에서 사용하면 전역 객체인 Window 객체를 가르킨다
+      console.log(valueA);  //그래서 valueA는 window.valueA로 해석되고  console.log(valueA)는  console.log(window.valueA)로 해석된다
+      valueB = "b";
+      console.log(this.valueB);
+
+      function checkThis() {    //함수에서 this를 사용하고 함수를 호출하면 this는 전역 객체인 Window를 가르킨다
+        console.log(this);      //하지만 함수 내의 코드를 엄격한 모드로 실행하게 되면 this는 undifined가 된다
+      }
+      function checkThis2() {
+        "use strict";   //엄격한 모드
+        console.log(this);
+      }
+      checkThis();
+      checkThis2();
+
+      function Product(name, price) {   //Product 함수는 생성자 함수로 작성되었다 하지만 new키워드 없이 호출되면
+        this.name = name;               //이때 this는 6라인과 동일하게 전역 객체인 Window를 가르킨다 new키워드와 함께 호출해야지만
+        this.price = price;             //그 객체를 가르킨다
+      }                                 //new 키워드와 함께 호출해야지만 this는 프로토타입 객체와 연결된 객체가 반환된다
+
+      const product1 = Product("가방", 2000);
+      console.log(window.name);
+      console.log(window.price);
+
+      const product2 = {
+        name: "가방2",
+        price: 3000,
+        getVAT() {
+          return this.price / 10;   //객체내에 정의된 함수인 메소드안에서 this를 사용하고 객체를 통해 메소드를 호출하면 this는 그 객체를 가리킨다
+        },
+      };
+
+      const valueOfProduct2 = product2.getVAT();
+      console.log(valueOfProduct2);
+
+      const calVAT = product2.getVAT;   //메소드 안에서 this를 정의했지만 메소드를 다른 변수에 저장하고 그 변수를 통해 호출하면
+      const VAT2 = calVAT();            //일반적인 함수 호출이 되어 this는 전역 객체를 가르킨다 즉 호출하는 시점에 점(.) 연산자와 함께
+      console.log(VAT2);                //객체가 주어져야 메소드안에 this가 호출의 주체인 객체가 된다
+
+      const newCalVAT = calVAT.bind(product2);  //this는 bind 메소드를 통해 전달한 인자값으로 변경할 수 있다
+      const VAT3 = newCalVAT();                 //this외에 call과 apply 메소드 또한 this가 가리키는 값을 변경할 수 있다
+
+      const counter1 = {    //메소드안에 중첩 함수로 함수가 작성됐을 떄 내부 함수의 this는 전역 객체를 가르킨다
+        count: 0,           //그래서 1초뒤 this.count는 window.count로 해석되어 undifined에 값을 더려하고 해서 Nan이 출력된다
+        addAfter1Sec() {
+          setTimeout(function () {
+            this.count += 1;
+            console.log(this.count);
+          }, 1000);
+        },
+      };
+
+      counter1.addAfter1Sec();
+
+      const counter2 = {
+        count: 0,
+        addAfter1Sec() {
+          setTimeout(() => {
+            this.count += 1;
+            console.log(this.count);
+          }, 1000);
+        },
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
