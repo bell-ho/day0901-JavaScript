@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모든 배열 요소가 특정 조건을 만족하는지 확인하기(every)</title>
+    <script>
+        const arr = [
+            { id: 0, name: '혜림', age: 6 },
+            { id: 1, name: '혜림1', age: 3 },
+            { id: 2, name: '혜림2', age: 2 },
+            { id: 3, name: '혜림3', age: 1 },
+        ];
+
+        const isAllHere = arr.every(el => el.name == '혜림');
+        const allAge = arr.every(el => el.age >= 1);
+
+        console.log(isAllHere);
+        console.log(allAge);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

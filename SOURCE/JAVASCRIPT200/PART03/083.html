@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const ship = {
+            max: 5,
+            passenger: [],
+            onBoard: function (name) {
+                if (this.passenger.length !== 5) {
+                    this.passenger.push(name);
+                    console.log(`${name} 승탑`);
+                } else {
+                    console.log(`${name} 부터는 꽉차서 못탑니다`);
+                }
+            }
+        }
+
+        ship.onBoard('이종호');
+        ship.onBoard('이종호2');
+        ship.onBoard('이종호3');
+        ship.onBoard('이종호4');
+        ship.onBoard('이종호5');
+        ship.onBoard('이종호6');
+        console.log(ship.passenger);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
