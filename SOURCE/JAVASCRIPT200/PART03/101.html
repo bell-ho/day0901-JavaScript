@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>객체에서 키만 추출하기</title>
+    <title>객체에서 키,값 추출하기</title>
     <script>
         const obj = {
             movie: '써니',
@@ -12,7 +12,14 @@
             style: '레트로'
         }
         const arr = Object.keys(obj);
+        const arr2 = Object.values(obj);
+
         console.log(arr);
+        console.log(arr2);
+
+        // 객체 배열로 변환하기
+        const modifiedObj = Object.entries(obj);
+        console.log(modifiedObj);
     </script>
 </head>
 

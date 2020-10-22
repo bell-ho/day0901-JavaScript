@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON을 문자열로 변환하기 (stringify)</title>
+    <script>
+        /* Json 객체 stringify 메소드는 대입한 값을 Json문자열로 변환한다
+        JSON.stringify(값 , 리플레이서 , 공백 개수)
+        첫번째는 제이슨 문자열로 변환할 대상이다
+        두번째 이플레이서는 제이슨 문자열로 변환하기 전에 값을 변경하는 인자이다
+        이때 리플레이서로 콜백 함수를 넣거나 특정 키 정보를 담은 배열을 넣어 값을 변경한다
+        세번째 인자 공백 개수는 제이슨 문자열의 들여쓰기 시 공백 개수를 의미한다
+        1~10까지 지정할 수 있고 null 이나 0또는 음수인 경우 공백을 사용하지 않는 것으로 간주한다*/
+
+        const testStringify = {
+            stringfiedNum: JSON.stringify(13.1),
+            stringifiedStr: JSON.stringify('aaar'),
+            stringifiedBln: JSON.stringify(false),
+            stringifiedArr: JSON.stringify([2003, 2017])
+        };
+
+        for (let key in testStringify) {
+            console.log(`=========${key}==========`);
+            console.log(typeof testStringify[key]);
+            console.log(testStringify[key]);
+        }
+
+        console.log(`============stringifyObj===============`);
+        const obj = {
+            drama: 'pet',
+            season: 2017,
+            casting: ['aa', 'bb'],
+            charactor: ['dd', 'ff']
+        };
+        console.log(typeof JSON.stringify(obj));
+        console.log(JSON.stringify(obj));
+        console.log(JSON.stringify(obj, [`drama`, `season`]));
+        console.log(JSON.stringify(obj, null, 4));
+        console.log(JSON.stringify(obj, (key, val) => {
+            if (key === 'season') {
+                return 2003;
+                return val;
+            }
+        }, 4));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
