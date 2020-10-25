@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 양끝 공백 없애기</title>
+    <script>
+        const sentences = ['    ABC abc', 'accc dd         '
+            , 'asdwdd    ',`first
+            secentd dadwd
+            third`];
+
+        const filterSentence = (sentences) => {
+            const filtered = [];
+            sentences.forEach(s => {
+                filtered.push(s.trim());
+            });
+            return filtered;
+        }
+        console.log(filterSentence(sentences));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
