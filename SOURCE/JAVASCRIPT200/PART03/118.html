@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정규표현식으로 대응되는 문자열 위치 확인하기 (search)</title>
+    <script>
+      /*  정규표현식이란 특정 규칙을 가진 문자열의 집합을 의미한다 
+        간단하게 regexp 또는 regex라고도 부르는데 특수문자 /와 /를 사이에 두는 표현식을 통해
+        일치하는 문자열을 찾거나 반환하고 또는 일괄 치환하기도 한다*/
+      const str = "To lose your path is the way to find that path";
+ 
+      /* 정규표현식은 특수기호 /를 양쪽에 두고 
+      그 안에 원하는 문자열의 패턴 또는 문자를 넣는다 
+      path 문자를 찾는 /path/를 regex1에 대입한다 */
+      const regex1 = /path/;    
+
+      // 변수regex2에 소문자 q를 찾는 정규표현식 /q/를 대입한다
+      const regex2 = /q/;
+
+      /* 특수기호 /가 끝나는 지점에 g플래그를 추가한다 g플래그를 추가하면
+      정규표현식은 대상 문자열 전체에서 일치하는 모든 문자를 찾는다
+      따라서 /t/g 는 모든 소문자 t를 가리킨다 */
+      const regex3 = /t/g;
+
+      /* i플래그를 추가하면 대소문자 구별없이 문자열을 찾는다 따라서 정규표현식은
+      T 또는 t문자를 찾는 표현식이다 */
+      const regex4 = /t/ig;
+
+      console.log(str.search(regex1));
+      console.log(str.search(regex2));
+
+      /* str 문자열 전역에서 소문자 t를 찾는 표현식을 대입한다
+      그러나 search 메소드 특성상 일치한 문자들 중 
+      가장 첫번째 인덱스 값만 찾기 때문에 숫자 15를 반환한다 */
+      console.log(str.search(regex3));
+
+      console.log(str.search(regex4));
+    </script>
+  </head>
+  <body></body>
+</html>

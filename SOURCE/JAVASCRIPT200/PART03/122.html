@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정규표현식으로 문자열 치환하기(replace)</title>
+
+    <script>
+      /* String 객체의 replace 메소드는 정규표현식으로 특정 문자열을 검색한 뒤 원하는 문자열로 대체 
+        문자열.replace(교체 대상 문자열 또는 정규식 , 대체될 문자열 또는 함수)*/
+
+      console.log("2020-10-25 14-25-00".replace("-", ":"));
+      console.log("2020-10-25 14-25-00".replace(/-/g, ":"));
+      console.log("2020-10-25 14-25-00".replace(/\d/g, "9"));
+
+      const littleWomen = "Meg March , Jo March , Beth March , Amy March";
+
+      /* 정규표현식 + March/ig는 우측에 March를 두는 모든 단어들을 찾는다
+        변수littleWomen에서 정규표현식으로 해당되는 모든 값을 찾아 
+        Mrs.$&로 변경하면 각 단어 왼쪽에 Mrs가 위치한다 */
+      console.log(littleWomen.replace(/\w+ March/gi, "Mrs.$&"));
+
+      console.log(
+        littleWomen.replace(/\w+ March/gi, (str, d1, d2, d3, d4, offset, s) => {
+          let tag = "";
+          if (/Meg/.test(str)) tag = "첫째";
+          else if (/Jo/.test(str)) tag = "둘째";
+          else if (/Beth/.test(str)) tag = "3째";
+          else if (/Amy/.test(str)) tag = "4째";
+
+          console.log(`원작 작은 아씨들 에서 주인공 ${str}은 ${tag}입니다`);
+          return tag;
+        })
+      );
+
+      const name = "March Amy";
+      console.log(name.replace(/(March) (Amy)/, "$2 $1"));
+    </script>
+  </head>
+  <body></body>
+</html>

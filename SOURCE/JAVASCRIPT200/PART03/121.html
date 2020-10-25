@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정규표현식으로 문자열 변환하기 (exec)</title>
+    <script>
+      // exec메소드는 정규표현식과 일치하는 문자열을 찾아 배열로 반환한다
+
+      const str = "Java is not in JavaScript";
+
+      const result1 = /java/gi.exec(str);
+      console.log(result1[0]);
+
+      // Java가 처음 발견된 인덱스 반환
+      console.log(result1.index);
+
+      //문자열 원본 출력
+      console.log(result1.input);
+
+      // 변수 regex에 숫자만 찾는 정규표현식을 대입
+      const regex = /\d+/g;
+    </script>
+  </head>
+  <body></body>
+</html>
