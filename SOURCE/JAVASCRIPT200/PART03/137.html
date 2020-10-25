@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일정 시간마다 코드 실행하기 (setInterval)</title>
+    <script>
+      let count = 0;
+      const timer = setInterval(() => {
+        console.log(`${count++} 번째 함수가 실행된다`);
+      }, 100);
+
+      //   clearInterval(timer);  콘솔을 중단시킨다
+    </script>
+  </head>
+  <body></body>
+</html>
