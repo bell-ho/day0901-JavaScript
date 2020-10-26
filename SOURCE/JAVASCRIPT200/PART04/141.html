@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM (Document Object Model)</title>
+</head>
+
+<body>
+    <div id="div1">hello DOM</div>
+    <ul>
+        <li>list item1</li>
+        <li>list item2</li>
+    </ul>
+</body>
+<!-- 마지막에 script태그를 작성한다 앞의 태그들을 브라우저가 먼저 읽어야지 자바스크립트 코드가 해석되기 전에
+    DOM으로 만들어져서 script 태그의 자바스크립트 코드에서 해당 DOM에 접근할 수 있기 때문이다 -->
+<script>
+    const div1El = document.getElementById('div1');
+    console.log(div1El.innerHTML);
+
+    console.log(div1El.nodeType);
+    console.log(div1El.nodeType === Node.ELEMENT_NODE);
+
+    console.log(div1El.constructor);
+    console.log(div1El instanceof HTMLDivElement);
+    console.log(div1El instanceof HTMLElement);
+    console.log(div1El instanceof Element);
+    console.log(div1El instanceof Node);
+    console.log(Element.prototype);
+    console.log(div1El.tagName);
+
+    const divEl2 = document.querySelector("#div1");
+    console.log(divEl2.innerHTML);
+
+    const liels = document.querySelectorAll('ul li');
+    console.log(liels.item(0).innerHTML);
+    console.log(liels.item(1).textContent);
+</script>
+
+</html>

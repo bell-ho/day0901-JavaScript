@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 속성과 태그 속성 예제</title>
+
+</head>
+
+<body>
+    <div id="div1" class="div-class">DIV태그</div>
+    <input type="text" id="input1" value="jay">
+
+    <script>
+        const div1El = document.getElementById('div1');
+        const input1 = document.getElementById('input1');
+
+        console.log("div1El.hasAttribute('id') : " + div1El.hasAttribute('id'));
+        console.log("div1El.getAttribute('id') : " + div1El.getAttribute('id'));
+        console.log("div1El.id : " + div1El.id);
+
+        div1El.removeAttribute('id');
+        console.log(div1El.id);
+        div1El.setAttribute('id', 'new-di');
+        console.log(div1El.id);
+
+        div1El.id = 'new-id-2';
+        console.log(div1El.getAttribute('id'));
+
+        console.log(div1El.getAttribute('class'));
+        console.log(div1El.class);
+        console.log(div1El.className);
+
+        div1El.setAttribute('class', 'new-div-class');
+        console.log(div1El.className);
+        div1El.className = 'new-div-class2';
+        console.log(div1El.getAttribute('class'));
+
+        const valueAttr = input1.getAttribute('value');
+        console.log(valueAttr);
+        console.log(input1.value);
+
+        /* input1 요소의 value 어트리뷰트 값과 value 프로퍼티 값이 초기엔 같다
+        하지만 사용자가 화면에서 값을 수정하거나 아래 문장처럼 value 프로퍼티 값을 변경해도
+        value 어트리뷰트 값은 변경이 안된다 value는 프로퍼티 값과 어트리뷰트 값이 항상 같지 않다 */
+        input1.value = 'jay2';
+        console.log(input1.getAttribute('value'));
+    </script>
+
+</body>
+
+</html>
