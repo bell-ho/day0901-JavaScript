@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 처리하기</title>
+    <script>
+        const inputContainer = document.getElementById("input-container");
+        console.log(inputContainer);
+
+        /* addEventListener는 첫번째 인자로 문자열을 전달하는데 이 문자열이 이벤트 종류이다
+        두번째 인자로 첫번째 인자로 전달한 이벤트가 발생할 경우 호출될 함수를 전달한다
+        이러한 함수를 리스너 함수라고 부른다 
+        
+        앞에서와 같이 DOM이 생성되기 이전에 자바스크립트 코드가 실행되는 문제를 해결하기 위해
+        DOMContentLoaded 이벤트를 이용할 수 있다 이 이벤트는 document에 직접 리스너 함수를 등록해야 한다
+        DOMContentLoaded이벤트는 HTML 전체가 로드되고 DOM트리가 완성되면 호출된다
+        이때 이미지나 스타일 시트와같은 외부 리소스는 로드되지 않은 상태이다
+        외부 리소스 까지 로드하려면 onload를 써야한다
+        */
+        document.addEventListener
+        ('DOMContentLoaded', e => {
+            const inputContainer = document.getElementById("input-container");
+            console.log(inputContainer);
+
+            /* 특정 name, id, class등을 이용해서 요소를 타겟으로 잡고 수정하거나 접근해서 
+            정보를 가져올수 있습니다. 하지만 querySelector()는 타겟의 자식요소 한가지만 가져오고
+            querySelectorAll()은 모두 가져오게 됩니다.  */
+            const inputEl = inputContainer.querySelector("input");
+            inputEl.addEventListener('keydown', e => {
+                console.log(`keyCode : ${e.keyCode}`);
+            });
+
+            const buttonEl = inputContainer.querySelector('button');
+            buttonEl.addEventListener('click', e => {
+                console.log(e.target);
+                console.log(`input value : ${inputEl.value}`);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+<div id="input-container">
+    <input type="text">
+    <button>버튼</button>
+</div>
+
+</html>
